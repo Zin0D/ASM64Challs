@@ -32,7 +32,7 @@ _start:
     push   rax
     mov rbx,0x2144d2144d2144d2 ;
 
-    ;Decode da shit 
+    ;START OF MY CODE
     xor r9, r9
 
 GOOFY:
@@ -84,3 +84,7 @@ EXIT:
 
 ;u can always rearange the contents, if u dont know the arragment.
 ;First becomes last, and positions swap, u should get the arragement pretty easily, smile.
+
+;For Solving the Challenge therefore, input this string into !Shellcoding.py as the second Argument
+;'4831c05048bbe671167e66af44215348bba723467c7ab51b4c5348bbbf264d344bb677435348bb9a10633620e771125348bbd244214d14d244214831c980c1044889e748311f4883c708e2f74831c0b0014831ff40b7014831f64889e64831d2b21e0f054831c04883c03c4831ff0f05'
+
