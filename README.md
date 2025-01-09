@@ -22,13 +22,19 @@ The Python code acts as a toolset to manipulate and validate the shellcode gener
    - Verify that the shellcode does not contain any null bytes.
 
 ## Challenges
+- The Challenges are part of the HTBAcademy Binary Exploitation Assesment.
+- Some of them, some ASM Files were created by me, to server as a way, to 
+- exploit Systems outside the scope of the Assesment
 
 1. **AcademyChall.asm Decryption**:  
    The `AcademyChall.asm` was originally an executable, which I disassembled using `objdump` with Intel syntax. The challenge specified that the key for decrypting stack values is stored in the `RBX` register.  
    I added custom code to decrypt the values and extract shellcode from the stack. The shellcode is formatted as a string, which can be inserted into the `!Shellcoding.py` script (as the second argument) to execute it on a Linux environment and retrieve the flag.  
    *(Ensure you're using an x64 CPU)*
+2. **GehShellcode.asm**:
+    This File is written by me and a modified version of my allready present file "GetFile.asm", its modified to be under 50 bytes, since the Assesment requieres it to be.
+    Load into ExtractShell.py to retrieve Shellcode.
 
-2. **Shellcode Execution**:  
+3. **Shellcode Execution**:  
    The other assembly files are shellcode executables written by myself. Extract the shellcode using `!ExtractShell.py`, then execute it with `!Shellcoding.py` to either spawn a shell or retrieve the contents of a specific file.  
    The `GetFile.asm` instructions must be modified to specify the target file.
 
