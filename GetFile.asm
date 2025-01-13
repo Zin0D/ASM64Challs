@@ -29,4 +29,5 @@ open:
 exit:
     mov al, 60
     mov dil, 60
-    syscall
+syscall
+

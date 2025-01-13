@@ -23,7 +23,7 @@ _start:
     mov rax,0x6af2a5571e69ff48
     push   rax
     mov rax,0x6d179aaff20709e6
-    push   rax
+    push   rax 
     mov rax,0x9ae3f152315bf1c9
     push   rax
     mov rax,0x373ab4bb0900179a
