@@ -9,7 +9,7 @@ shellcode = sys.argv[1]
 """ EXTRACT ShellCode:
     file.section(".text").hex()
 """
-x = input("INPUT 1 for EXECUTING SHELLCODE, 2 ")
+x = input("INPUT 1 for EXECUTING SHELLCODE, 2 FOR VERIFYING INTEGRITY")
 match x:
     case "1":
         pwn.context(os="Linux", arch="amd64", log_level="error")
