@@ -1,5 +1,5 @@
 # ASM Challenge Solutions
-- Decided to document what im doing ':)' 
+- Decided to document what im doing xd. 
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
@@ -84,6 +84,29 @@ This solution shows how to access data at a specified memory address, considerin
 
 ---
 
+## 6. Little-endian-write
+
+In this section, we perform memory writes in little-endian format using x86-64 assembly instructions.
+
+```asm
+0x400000:	mov   	rax, 0x00001337         
+0x400007:	mov   	dword ptr [rdi], eax   
+
+0x400009:	mov  	rax, 0xdeadbeef       
+0x400013:	mov   	dword ptr [rdi + 4], eax 
+
+0x400016:	mov 	rax, 0x0000c0ffee0000       
+0x400020:	mov   	qword ptr [rsi], rax   
+
+Instructions are REVERSED: c0ffee
+```
+
+### Explanation:
+- Data is stored in `memory in reverse order depending on the system's endianness`. In little-endian systems, the least significant byte is stored first, while in big-endian systems, the most significant byte comes first.
+As a result, to correctly load data into memory, we may need to `manually reverse` the byte order depending on the system's endianness.
+The `mov instruction does not perform any byte order reversal by itself`. It simply moves data as it is, which means we have to handle the reversal manually when necessary.
+
+---
 ## Conclusion
 
 Still aint finished with the Module, so no Conclusion yet :P
