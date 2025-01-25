@@ -1,4 +1,5 @@
 # ASM Challenge Solutions
+- Decided to document what im doing ':)' 
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
@@ -68,7 +69,14 @@ mov al, [0x40400]      ; Load the byte at memory address 0x40400 into the lower 
 This solution shows how to access data at a specified memory address, considering different data sizes (e.g., byte, word, dword, qword).
 
 ```asm
-; Example: Access a value at 0x404000 with appropriate size (qword, dword, etc.)
+0x400000:	mov   	rax, 0
+0x400007:	mov   	rbx, 0
+0x40000e:	mov   	rcx, 0
+0x400015:	mov   	rdx, 0
+0x40001c:	mov   	al, byte ptr [0x404000]
+0x400023:	mov   	bx, word ptr [0x404000]
+0x40002b:	mov   	ecx, dword ptr [0x404000]
+0x400032:	mov   	rdx, qword ptr [0x404000]
 ```
 
 ### Explanation:
