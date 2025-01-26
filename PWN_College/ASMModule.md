@@ -107,6 +107,23 @@ As a result, to correctly load data into memory, we may need to `manually revers
 The `mov instruction does not perform any byte order reversal by itself`. It simply moves data as it is, which means we have to handle the reversal manually when necessary.
 
 ---
+
+## 7. Memory-sum 
+
+Just accessing variables at certain parts of memory 
+
+```
+0x400000:	mov   	r8, qword ptr [rdi]
+0x400003:	mov   	r9, qword ptr [rdi + 8]
+0x400007:	add   	r9, r8
+0x40000a:	mov   	qword ptr [rsi], r9
+```
+
+### Explanation:
+- We can use so called `OFFSETS` , to write to a specific part in memory.
+
+---
+
 ## Conclusion
 
 Still aint finished with the Module, so no Conclusion yet :P
