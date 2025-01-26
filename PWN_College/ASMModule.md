@@ -1,5 +1,5 @@
 # ASM Challenge Solutions
-- Decided to document what im doing xd. 
+- Decided to document what im doing xd, those are the PWN College Solutions. 
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
