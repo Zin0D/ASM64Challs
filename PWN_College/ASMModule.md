@@ -112,7 +112,7 @@ The `mov instruction does not perform any byte order reversal by itself`. It sim
 
 Just accessing variables at certain parts of memory 
 
-```
+```asm
 0x400000:	mov   	r8, qword ptr [rdi]
 0x400003:	mov   	r9, qword ptr [rdi + 8]
 0x400007:	add   	r9, r8
