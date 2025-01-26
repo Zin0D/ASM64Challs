@@ -1,5 +1,5 @@
 # ASM Challenge Solutions
-- Decided to document what im doing xd, those are the PWN College Solutions. 
+- Decided to document what im doing xd, those are the PWN College ASM Solutions. 
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
@@ -110,7 +110,7 @@ The `mov instruction does not perform any byte order reversal by itself`. It sim
 
 ## 7. Memory-sum 
 
-Just accessing variables at certain parts of memory 
+This Solution shows how to access parts of memory. 
 
 ```asm
 0x400000:	mov   	r8, qword ptr [rdi]
@@ -121,6 +121,69 @@ Just accessing variables at certain parts of memory
 
 ### Explanation:
 - We can use so called `OFFSETS` , to write to a specific part in memory.
+
+---
+
+## 8. Stack-Subtraction 
+
+Popping and Pushing :P 
+
+```asm
+0x400000:	xor   	rax, rax
+0x400003:	pop   	rax
+0x400004:	sub   	rax, rdi
+0x400007:	push  	rax
+```
+
+### Explanation:
+- Pushing and Popping are `OPERANDS` used to add or remove Values from the Stack
+- Using `PUSH`, we can add a value ontop of the Stack, (RSP+8)
+- Using `POP` , we shorten the Stack by removing a value from it, and saving it in the mentioned Register.
+
+---
+
+## 9. Swap-Stack-Values
+
+This Solution demonstrates how to `exchange Values` using the Stack.
+
+```asm
+0x400000:	push  	rdi
+0x400001:	push  	rsi
+0x400002:	pop   	rdi
+0x400003:	pop   	rsi
+```
+
+### Explanation:
+- As stated in `9.` we can add and remove values from the Stack and store them in the specified registers.
+- Therefore we can also `exchange Values` between other Registers using the Stack.
+
+---
+
+## 9. Average-Stack-Values
+
+This Section shows how to `take values stored on the stack`, and work with them.
+In this case, `we addeded all of the Values` and then divided them by the amount of Defrences.
+
+```asm
+0x400000:	mov   	r9, qword ptr [rsp]
+0x400004:	mov   	r8, qword ptr [rsp + 8]
+0x400009:	add   	r9, r8
+0x40000c:	mov   	r8, qword ptr [rsp + 0x10]
+0x400011:	add   	r9, r8
+0x400014:	mov   	r8, qword ptr [rsp + 0x18]
+0x400019:	add   	r9, r8
+
+0x40001c:	mov   	rdi, 0
+0x400023:	mov   	rax, r9
+0x400026:	mov   	rcx, 4
+0x40002d:	div   	rcx
+0x400030:	push  	rax
+```
+
+### Explanation:
+- Since the` RSP points to a value` stored on the Stack, we can defrence it and `access` the `values on the Stack`, such as other Adresses or Values.
+- `Therefore we can also interact with the values`.
+- In this case, adding them all together and dividing them by the amount of QWORDS stored on the stack, provided the Solution.
 
 ---
 
