@@ -159,7 +159,7 @@ This Solution demonstrates how to `exchange Values` using the Stack.
 
 ---
 
-## 9. Average-Stack-Values
+## 10. Average-Stack-Values
 
 This Section shows how to `take values stored on the stack`, and work with them.
 In this case, `we addeded all of the Values` and then divided them by the amount of Defrences.
