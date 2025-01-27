@@ -254,6 +254,44 @@ jmp rax
 
 ---
 
+## 14. Conditional-Jump
+
+- This Section is a bit tougher and basically implements the if, if - else, else logic in assembly:
+
+```asm
+_start:
+xor rax, rax 
+mov r8d, 0x7f454c46
+cmp r8d, [rdi]
+je _loompa
+
+mov r8d, 0x00005A4D
+cmp r8d, [rdi]
+je _lucker
+
+movsx eax, dword ptr [rdi+4]
+imul eax, dword ptr [rdi+8]
+imul eax, dword ptr [rdi+12]
+jmp _exit
+
+_loompa:
+movsx eax, dword ptr [rdi+4]
+add eax, dword ptr [rdi+8]
+add eax, dword ptr [rdi+12]
+jmp _exit
+
+_lucker:
+movsx eax, dword ptr [rdi+4]
+sub eax, dword ptr [rdi+8]
+sub eax, dword ptr [rdi+12]
+jmp _exit
+
+_exit:
+```
+### Explanation: 
+
+---
+
 ## Conclusion
 
 Still aint finished with the Module, so no Conclusion yet :P
