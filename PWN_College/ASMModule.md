@@ -256,7 +256,18 @@ jmp rax
 
 ## 14. Conditional-Jump
 
-- This Section is a bit tougher and basically implements the if, if - else, else logic in assembly:
+This Section is a bit `tougher` and basically `implements the if, if - else, else logic` in assembly:
+
+Given Code:
+```C 
+if [x] is 0x7f454c46:
+    y = [x+4] + [x+8] + [x+12]
+else if [x] is 0x00005A4D:
+    y = [x+4] - [x+8] - [x+12]
+else:
+    y = [x+4] * [x+8] * [x+12]
+```
+`Self written code`
 
 ```asm
 _start:
@@ -288,7 +299,10 @@ jmp _exit
 
 _exit:
 ```
+
 ### Explanation: 
+- This is the implementation of an if , if else, else statement in Assembly.
+  Using tricks such as `Fallthroughs` and `cond-jmps` to implement logical control-flow.  
 
 ---
 
