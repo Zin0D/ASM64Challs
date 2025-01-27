@@ -187,6 +187,32 @@ In this case, `we addeded all of the Values` and then divided them by the amount
 
 ---
 
+## 11. Absoloute-Jump 
+
+Solution to the Abosloute jump.
+
+```asm
+xor rax, rax
+mov rax, 0x403000
+jmp rax
+```
+
+### Explanation:
+- JMP instructions are by default `Absolute`
+
+---
+
+## 12. relative-jump
+
+This Section demonstrates how `relative postions (OFFSETS)` look like
+in action.
+Also demonstrates how to use the .rept tag, to `repeat an instruction`
+`n amount of times`.
+
+--- 
+
+## 13. 
+
 ## Conclusion
 
 Still aint finished with the Module, so no Conclusion yet :P
