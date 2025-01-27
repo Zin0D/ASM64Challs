@@ -209,9 +209,50 @@ in action.
 Also demonstrates how to use the .rept tag, to `repeat an instruction`
 `n amount of times`.
 
+```asm
+_start:
+jmp oof
+
+.rept 81
+nop
+.endr
+
+
+oof:
+mov rax, 0x1
+```
+
+### Explanation:
+- Each instruction is `stored in memory`, therefore each instruction has an `adress pointing to it`.
+  We can use this to determine `OFFSETS`, which will help in `creating Exploits` later on.
+
 --- 
 
 ## 13. Jump-Trampoline
+
+This Section is similar to `.12` and demonstrates how Instructions are fed into memory.
+And How the offset can be used to determine the lenght from `BASE` to Instruction.
+
+```asm
+_start:
+jmp oof
+
+.rept 81
+nop
+.endr
+
+oof:
+pop rdi
+xor rax, rax
+mov rax, 0x403000
+jmp rax
+```
+
+### Explanation:
+- Solution that demonstrates, like in `.12` how `Instructions are stored`
+  At the Offset `BASE+81` , the oof section's instructions begin.
+
+---
 
 ## Conclusion
 
