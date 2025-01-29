@@ -306,6 +306,29 @@ It leverages techniques such as `fallthrough` and `conditional` jumps to manage 
 The challenge specifically involves working with `signed values`, making it necessary to account for both positive and negative conditions within the control flow logic.
 ---
 
+## 15. Indirect-Jump
+
+Using CMPS to determine when to JMP.
+
+```asm
+_start:
+cmp rdi, 3
+ja _default
+
+_iSee:
+lea rax, [rsi + rdi * 8] 
+jmp [rax]
+
+_default:
+lea rax, [rsi + 4 * 8]
+jmp [rax]
+```
+### Explanation:
+`CMPS` compare Values and can be used to create an `If, Else logic`, or a `switch-case logic`
+Knowing this, we can implement all kinds of Boolean Logic, the Code above demonstrates this, using `Switch` Statements.
+
+---
+
 ## Conclusion
 
 Still aint finished with the Module, so no Conclusion yet :P
