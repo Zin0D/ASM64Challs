@@ -329,6 +329,51 @@ Knowing this, we can implement all kinds of Boolean Logic, the Code above demons
 
 ---
 
+## BREAK. HowToFUckUP
+
+Reading a Chall wrong caused me to do something completely different.
+Although what i did can also be considered a Challenge so i decided to incl it in here:
+
+```C
+average = 0
+i = 0
+while x[i] < 0xff:
+  average += x[i]
+  i += 1
+average /= i
+```
+
+```asm
+.intel_syntax noprefix
+.global _start
+
+_start:
+cmp rdi, 0
+je _exit
+
+mov r9, 0
+mov rax, 0
+
+loop:
+add r9b, byte ptr [rdi + rax * 1]
+inc rax
+cmp byte ptr [rdi + rax * 1], 0xff
+jl loop
+jmp _fin
+
+_exit:
+mov rax, 0
+
+_fin:
+mov rcx, rax
+mov rax, r9
+div rcx
+```
+
+### Explanation:
+
+---
+
 ## Conclusion
 
 Still aint finished with the Module, so no Conclusion yet :P
