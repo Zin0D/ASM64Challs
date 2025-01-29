@@ -371,6 +371,7 @@ div rcx
 ```
 
 ### Explanation:
+I wrote the C Code above in ASM to try replicate the Logic.
 
 ---
 
