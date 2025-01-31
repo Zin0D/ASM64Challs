@@ -379,4 +379,5 @@ I wrote the C Code above in ASM to try replicate the Logic.
 
 ## Conclusion
 
-Still aint finished with the Module, so no Conclusion yet :P
+A really good module to get the basics down :P
+More Content to read is listed on PWNCollege to deepen da knowlledge.
