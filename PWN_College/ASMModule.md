@@ -1,5 +1,6 @@
 # ASM Challenge Solutions
-- Decided to document what im doing xd, those are the PWN College ASM Solutions. 
+- Decided to document what im doing xd, those are the PWN College ASM Solutions.
+- Elliot Alderson of the 0'sum game is the one i aspire to be.
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
@@ -404,6 +405,33 @@ We use the `cmp` instruction as a type of checker, that subtracts 2 values from 
 The `result is stored in a $Variable which allows us, to access its content and control jmp instructions` 
 
 ---
+
+## 17. Count-non-zero
+
+For each ADDRESSSPACE, we count if Data is available, if 0x00, then exit.
+
+```ASM
+_start:
+mov rax,0
+mov r9b, byte ptr [rdi + rbx]
+cmp r9b, 0
+je _exit
+
+_loop:
+inc rax
+mov r9b, byte ptr [rdi + rbx]
+cmp r9b, 0
+jne _loop
+
+
+_exit:
+```
+
+### Explanation:
+We can look into an `ADRESS Space` by moving an `amount of n lenght of said space into a register.`
+For example, moving into al, byte ptr [SomeRegister]
+Like this we can `evaluate`, we can use that to do actions such as `Check if data is available`.
+
 
 ## Conclusion
 
