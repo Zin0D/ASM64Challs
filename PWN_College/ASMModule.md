@@ -373,7 +373,35 @@ div rcx
 ```
 
 ### Explanation:
-I wrote the C Code above in ASM to try replicate the Logic.
+I wrote the C Code above in ASM to `try replicate the Logic`.
+
+---
+
+## 16. Average-loop
+
+Looping untill a Condition is hit.
+
+```asm
+start:
+mov r9, 0
+xor rax, rax
+mov rax, qword ptr [rdi]
+
+_loop:
+inc r9
+add rax, qword ptr [rdi+r9*8]
+cmp r9, rsi
+jle _loop
+
+xor rdi, rdi   
+mov rdi, rsi
+div rdi
+```
+
+### Explanation:
+We want to `loop and set a break condition`.
+We use the `cmp` instruction as a type of checker, that subtracts 2 values from each other.
+The `result is stored in a $Variable which allows us, to access its content and control jmp instructions` 
 
 ---
 
