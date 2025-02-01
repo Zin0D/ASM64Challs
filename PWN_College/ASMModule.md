@@ -303,9 +303,9 @@ _exit:
 
 ### Explanation: 
 
-This implementation demonstrates the use of conditional statements `(if, if else, else)` in Assembly language.
-It leverages techniques such as `fallthrough` and `conditional` jumps to manage control flow efficiently. 
-The challenge specifically involves working with `signed values`, making it necessary to account for both positive and negative conditions within the control flow logic.
+- This implementation demonstrates the use of conditional statements `(if, if else, else)` in Assembly language.
+- It leverages techniques such as `fallthrough` and `conditional` jumps to manage control flow efficiently. 
+- The challenge specifically involves working with `signed values`, making it necessary to account for both positive and negative conditions within the control flow logic.
 
 ---
 
@@ -327,8 +327,8 @@ lea rax, [rsi + 4 * 8]
 jmp [rax]
 ```
 ### Explanation:
-`CMPS` compare Values and can be used to create an `If, Else logic`, or a `switch-case logic`
-Knowing this, we can implement all kinds of Boolean Logic, the Code above demonstrates this, using `Switch` Statements.
+- `CMPS` compare Values and can be used to create an `If, Else logic`, or a `switch-case logic`
+- Knowing this, we can implement all kinds of Boolean Logic, the Code above demonstrates this, using `Switch` Statements.
 
 ---
 
@@ -374,7 +374,7 @@ div rcx
 ```
 
 ### Explanation:
-I wrote the C Code above in ASM to `try replicate the Logic`.
+- I wrote the C Code above in ASM to `try replicate the Logic`.
 
 ---
 
@@ -400,9 +400,9 @@ div rdi
 ```
 
 ### Explanation:
-We want to `loop and set a break condition`.
-We use the `cmp` instruction as a type of checker, that subtracts 2 values from each other.
-The `result is stored in a $Variable which allows us, to access its content and control jmp instructions` 
+- We want to `loop and set a break condition`.
+- We use the `cmp` instruction as a type of checker, that subtracts 2 values from each other.
+- The `result is stored in a $Variable which allows us, to access its content and control jmp instructions` 
 
 ---
 
@@ -428,13 +428,13 @@ _exit:
 ```
 
 ### Explanation:
-We can look into an `ADRESS Space` by moving an `amount of n lenght of said space into a register.`
-For example, moving into al, byte ptr [SomeRegister]
-Like this we can `evaluate`, we can use that to do actions such as `Check if data is available`.
+- We can look into an `ADRESS Space` by moving an `amount of n lenght of said space into a register.`
+- For example, moving into al, byte ptr [SomeRegister]
+- Like this we can `evaluate`, we can use that to do actions such as `Check if data is available`.
 
 ---
 
 ## Conclusion
 
-A really good module to get the basics down :P
-More Content to read is listed on PWNCollege to deepen da knowlledge.
+- A really good module to get the basics down :P
+- More Content to read is listed on PWNCollege to deepen da knowlledge.
