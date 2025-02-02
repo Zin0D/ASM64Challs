@@ -1,6 +1,6 @@
 # ASM Challenge Solutions
 - Decided to document what im doing xd, those are the PWN College ASM Solutions.
-- Elliot Alderson of the 0'sum game is the one i aspire to be.
+- Elliot Alderson is the one i aspire to be.
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
