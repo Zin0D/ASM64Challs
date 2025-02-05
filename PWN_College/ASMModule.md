@@ -1,6 +1,6 @@
 # ASM Challenge Solutions
 - Decided to document what im doing xd, those are the PWN College ASM Solutions.
-- Elliot Alderson is the one i aspire to be.
+- Elliot Alderson is the one i aspire to be, and i will be at his level.
 
 ## 1. Check if a number is odd or even without conditional jumps:
 
